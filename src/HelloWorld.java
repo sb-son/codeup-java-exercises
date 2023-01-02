@@ -4,10 +4,10 @@ public class HelloWorld {
         System.out.println(" World!");
         int myFavoriteNumber;
         myFavoriteNumber = 26;
-        double myString;
-        myString = 3.14;
-        float myNumber;
-        myNumber = 3;
+        String myString;
+        myString = "My favorite number is ";
+        double myNumber;
+        myNumber = 4.5;
         System.out.println(myNumber);
         System.out.print(myString);
         System.out.println(myFavoriteNumber + ".");
