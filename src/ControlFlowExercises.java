@@ -40,25 +40,47 @@ public class ControlFlowExercises {
             }
         }
 
+        for (i = 1; i <= 100; i++) {
+            boolean divisibleBy3 = (i % 3 == 0);
+            boolean divisibleBy5 = (i % 5 == 0);
+            if (divisibleBy3 && divisibleBy5) {
+                System.out.println("FizzBuzz");
+            } else if (divisibleBy3) {
+                System.out.println("Fizz");
+            } else if (divisibleBy5) {
+                System.out.println("Buzz");
+            } else {
+                System.out.println(i);
+            }
+        }
+
         Scanner scanner = new Scanner(System.in);
-        System.out.println("What number would you like to go up to?");
-        int userNumber = Integer.parseInt(scanner.next());
-        System.out.println("Here is your table!");
-        System.out.println("number  |  squared  |  cubed");
-        System.out.println("------  |  -------  |  -----");
-        for (i = 1; i <= userNumber; i++) {
-            int square = i * i;
-            int cubed  =i * i * i;
-            System.out.printf("%-7d |  %-8d |  %-5d\n", i, square, cubed);
+        boolean confirmation;
+
+        do {
+            System.out.println("What number would you like to go up to?");
+            int userNumber = Integer.parseInt(scanner.next());
+            System.out.println("Here is your table!");
+            System.out.println("number  |  squared  |  cubed");
+            System.out.println("------  |  -------  |  -----");
+            for (i = 1; i <= userNumber; i++) {
+                int square = i * i;
+                int cubed = i * i * i;
+                System.out.printf("%-7d |  %-8d |  %-5d\n", i, square, cubed);
 //            System.out.print(i + "       |   ");
 //            System.out.print(i * i + "       |  ");
 //            System.out.print(i * i * i + "\n");
-        }
+            }
+            System.out.print("Continue? [y/n] ");
+            String userInput = scanner.next();
+            confirmation = userInput.equalsIgnoreCase("y");
+        } while (confirmation);
 
-        boolean confirmation;
+
         do {
             System.out.println("What is your grade?");
-            int userGrade = Integer.parseInt(scanner.next());
+//            int userGrade = Integer.parseInt(scanner.next());
+            int userGrade = scanner.nextInt();
             if (userGrade >= 88) {
                 System.out.println("A");
             } else if (userGrade < 88 && userGrade >= 80) {
@@ -70,12 +92,9 @@ public class ControlFlowExercises {
             } else {
                 System.out.println("F");
             }
-            Scanner sc = new Scanner(System.in);
             System.out.print("Continue? [y/n] ");
-            String userInput = sc.next();
-            confirmation = userInput.equals("y");
+            String userInput = scanner.next();
+            confirmation = userInput.equalsIgnoreCase("y");
         } while (confirmation);
-
-
     }
 }
