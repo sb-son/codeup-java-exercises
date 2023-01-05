@@ -21,43 +21,50 @@ public class HighLow {
     }
 
     public static int guessingGame() {
-        int randNum = randNum();
-        System.out.println("randNum = " + randNum);
-        System.out.println("Guess the random number: ");
-        int userGuess = scanner.nextInt();
-        int count = 5; //limit the number of guesses
+        String playAgain;
+        int randNum;
+        do {
+            randNum = randNum();
+            System.out.println("randNum = " + randNum);
+            System.out.println("Guess the random number: ");
+            int userGuess = scanner.nextInt();
+            int count = 5; //limit the number of guesses
 
-        while (userGuess < 1 || userGuess > 100) {
-            System.out.println("Try again. Enter a number between 1 and 100: ");
-            userGuess = scanner.nextInt();
-        }
-
-        while (userGuess != randNum && count != 1) {
-            --count; //countdown on number of guesses when wrong. user gets 5 tries
-            if (userGuess < randNum) {
-                System.out.println("HIGHER");
-            } else {
-                System.out.println("LOWER");
-            }
-
-            if (count == 1) {
-                System.out.println("Last try!\n");
-            } else {
-            System.out.println(count + " tries remaining\n");
-            }
-
-            System.out.println("Guess again: ");
-            userGuess = scanner.nextInt();
             while (userGuess < 1 || userGuess > 100) {
                 System.out.println("Try again. Enter a number between 1 and 100: ");
                 userGuess = scanner.nextInt();
             }
-        }
-        if (userGuess == randNum) {
-            System.out.println("You win. GOOD GUESS!");
-        } else {
-            System.out.println("You lose. Try again next time!");
-        }
+
+            while (userGuess != randNum && count != 1) {
+                --count; //countdown on number of guesses when wrong. user gets 5 tries
+                if (userGuess < randNum) {
+                    System.out.println("HIGHER");
+                } else {
+                    System.out.println("LOWER");
+                }
+
+                if (count == 1) {
+                    System.out.println("Last try!\n");
+                } else {
+                    System.out.println(count + " tries remaining\n");
+                }
+
+                System.out.println("Guess again: ");
+                userGuess = scanner.nextInt();
+                while (userGuess < 1 || userGuess > 100) {
+                    System.out.println("Try again. Enter a number between 1 and 100: ");
+                    userGuess = scanner.nextInt();
+                }
+            }
+            if (userGuess == randNum) {
+                System.out.println("You win. GOOD GUESS!");
+            } else {
+                System.out.println("You lose. Try again next time!");
+            }
+
+            System.out.println("Wanna play again? (y/n)");
+            playAgain = scanner.next();
+        } while (playAgain.equalsIgnoreCase("Y"));
         return randNum;
     }
 
