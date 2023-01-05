@@ -1,4 +1,6 @@
 import java.util.Scanner;
+import java.lang.Math;
+
 
 public class MethodsExercises {
     public static Scanner scanner = new Scanner(System.in);
@@ -63,9 +65,9 @@ public class MethodsExercises {
             }
             System.out.println("The factorial of " + number + " is " + factorial);
 
-            System.out.println("Do you want to continue? (y/n)");
+            System.out.println("Continue? (y/n)");
             String answer = scanner.next();
-            if (answer.equalsIgnoreCase("n")) {
+            if (!answer.equalsIgnoreCase("y")) {
                 break;
             }
         }
@@ -81,6 +83,27 @@ public class MethodsExercises {
         return result;
     }
 
+    //Create an application that simulates dice rolling
+    public static int dice() {
+        System.out.println("Enter number of sides for a pair of dice: ");
+        int numberOfSides = scanner.nextInt();
+        int sum;
+
+        while (true) {
+            int roll1 = (int) (Math.random() * numberOfSides + 1);
+            int roll2 = (int) (Math.random() * numberOfSides + 1);
+            System.out.printf("You rolled %d and %d\n", roll1, roll2);
+            sum = addition(roll1, roll2);
+            System.out.printf("Total is %d\n", sum);
+            System.out.println("Roll again? (y/n)");
+            String resp = scanner.next();
+            if (!resp.equalsIgnoreCase("y")) {
+                break;
+            }
+        }
+        return sum;
+    }
+
 
     public static void main(String[] args) {
         System.out.println(addition(2, 5));
@@ -91,5 +114,6 @@ public class MethodsExercises {
 //        getInteger(1, 10);
         factorial();
         System.out.println(factorialRecursion(4));
+        dice();
     }
 }
