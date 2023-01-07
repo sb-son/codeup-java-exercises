@@ -6,5 +6,10 @@ public class InputTest {
         String userInput = input.getString();
         System.out.println(userInput);
         System.out.println(input.toString());
+
+        System.out.println(input.yesNo());
+        System.out.println(input.getInt(1, 10));
+        System.out.println(input.getInt());
+
     }
 }

@@ -40,8 +40,6 @@ public class ConsoleAdventureGame {
 
         int enemyHealth = 100;
         int heroHealth = 100;
-//        int heroDefense = 10;
-//        int enemyDefense = 10;
         int potions = 3;
 
         System.out.println("Welcome, " + name + "!");
