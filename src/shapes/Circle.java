@@ -19,4 +19,11 @@ public class Circle {
     public double getRadius() {
         return radius;
     }
+
+    @Override
+    public String toString() {
+        return "Circle{\n" +
+                "Radius= " + this.radius + '\n' + "Area= " + this.getArea() + '\n' + "Circumference=" + this.getCircumference() +
+                "\n}";
+    }
 }

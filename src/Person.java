@@ -9,9 +9,8 @@ public class Person {
         this.name = name;
     }
 
-    public boolean sayHello() {
-        System.out.printf("Hello %s", this.name);
-        return false;
+    public void sayHello() {
+        System.out.printf("Hello %s", name);
     }
 
     public Person(){}
@@ -22,11 +21,14 @@ public class Person {
     public static void main(String[] args) {
         Person person1 = new Person("John");
         Person person2 = person1;
+        Person person3 = person2;
         System.out.println(person1.getName());
         System.out.println(person2.getName());
-        person2.setName("Jane");
+        System.out.println(person3.getName());
+        person1.setName("Jane");
         System.out.println(person1.getName());
         System.out.println(person2.getName());
-        System.out.println(person1.sayHello());
+        System.out.println(person3.getName());
+        person1.sayHello();
     }
 }

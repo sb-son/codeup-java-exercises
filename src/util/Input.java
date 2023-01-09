@@ -17,7 +17,6 @@ public class Input {
     }
 
     //The yesNo method should return true if the user enters y, yes, or variants thereof, and false otherwise
-    //Question for later: why don't methods work if they are static?
     public boolean yesNo() {
         System.out.println("Enter yes or no: (y/n)");
         String response = scanner.nextLine().toLowerCase();

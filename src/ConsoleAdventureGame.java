@@ -112,7 +112,7 @@ public class ConsoleAdventureGame {
         if (enemyHealth <= 0) {
             System.out.println("Congratulations! You have defeated the enemy!");
         } else if (heroHealth <= 0) {
-            System.out.println("Your journey ended soon, traveler. The enemy has defeated you!");
+            System.out.println("Your journey is over, traveler. The enemy has defeated you!");
         }
     }
 }
