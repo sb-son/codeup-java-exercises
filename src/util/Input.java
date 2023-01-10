@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Input {
     private Scanner scanner;
     public Input() {
-        this.scanner = new Scanner(System.in);
+        scanner = new Scanner(System.in);
     }
 
     //returns string input from user
@@ -12,12 +12,14 @@ public class Input {
         return scanner.nextLine();
     }
 
-    public String toString() {
-        return String.format("{%n string: %s%n};", this.scanner);
+    public String getString(String prompt) {
+        System.out.println(prompt);
+        return scanner.nextLine();
     }
 
     //The yesNo method should return true if the user enters y, yes, or variants thereof, and false otherwise
     public boolean yesNo() {
+        getString("Enter yes or no: (y/n)");
         System.out.println("Enter yes or no: (y/n)");
         String response = scanner.nextLine().toLowerCase();
         return response.equals("y") || response.equals("yes");
@@ -28,10 +30,8 @@ public class Input {
         int userInput = scanner.nextInt();
         if (userInput < min || userInput > max) {
             return getInt(min, max);
-        } else {
-            System.out.println("You entered " + userInput);
-            return userInput;
         }
+        return userInput;
     }
 
     public int getInt() {
@@ -44,10 +44,8 @@ public class Input {
         double userInput = scanner.nextDouble();
         if (userInput < min || userInput > max) {
             return getDouble(min, max);
-        } else {
-            System.out.println("You entered " + userInput);
-            return userInput;
         }
+        return userInput;
     }
 
     public double getDouble() {

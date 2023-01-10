@@ -1,7 +1,5 @@
 package shapes;
 
-import java.lang.Math;
-
 public class Circle {
     private double radius;
 
@@ -9,6 +7,7 @@ public class Circle {
         this.radius = radius;
     }
     public double getArea(){
+        //Math.PI * Math.pow(this.radius, 2)
         return Math.PI * (radius * radius);
     }
 
@@ -20,7 +19,6 @@ public class Circle {
         return radius;
     }
 
-    @Override
     public String toString() {
         return "Circle{\n" +
                 "Radius= " + this.radius + '\n' + "Area= " + this.getArea() + '\n' + "Circumference=" + this.getCircumference() +
