@@ -1,14 +1,18 @@
 import java.util.Arrays;
 
 public class ArraysExercise {
-    public static Person[] addPerson(Person[] people, Person newPerson) {
-        Person[] newPeopleArray = new Person[people.length + 1];
+    public static Person[] addPerson(Person[] array, Person newPerson) {
+        Person[] people = Arrays.copyOf(array, array.length + 1);
+        people[array.length] = newPerson;
+        return people;
 
-        for (int i = 0; i < people.length; i++) {
-            newPeopleArray[i] = people[i];
-        }
-        newPeopleArray[newPeopleArray.length - 1] = newPerson;
-        return newPeopleArray;
+//        Person[] newPeopleArray = new Person[array.length + 1];
+//
+//        for (int i = 0; i < array.length; i++) {
+//            newPeopleArray[i] = array[i];
+//        }
+//        newPeopleArray[newPeopleArray.length - 1] = newPerson;
+//        return newPeopleArray;
     }
 
     public static void main(String[] args) {
@@ -22,7 +26,8 @@ public class ArraysExercise {
             System.out.println(person.getName());
         }
 
-        System.out.println(Arrays.toString(people));
+//        System.out.println(Arrays.toString(people));
+        System.out.println("----------");
         people = addPerson(people, new Person("Jane"));
         for (Person person : people) {
             System.out.println(person.getName());
