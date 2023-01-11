@@ -38,6 +38,10 @@ public class Input {
         System.out.println("Enter a number: ");
         return scanner.nextInt();
     }
+    public int getInt(String prompt) {
+        System.out.println(prompt);
+        return scanner.nextInt();
+    }
 
     public double getDouble(double min, double max) {
         System.out.printf("Enter a number between %s and %s: ", min, max);
