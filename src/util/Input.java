@@ -19,9 +19,9 @@ public class Input {
 
     //The yesNo method should return true if the user enters y, yes, or variants thereof, and false otherwise
     public boolean yesNo() {
-        getString("Enter yes or no: (y/n)");
-        System.out.println("Enter yes or no: (y/n)");
-        String response = scanner.nextLine().toLowerCase();
+
+//        System.out.println("Enter yes or no: (y/n)");
+        String response = getString("Enter yes or no: (y/n)");
         return response.equals("y") || response.equals("yes");
     }
 
