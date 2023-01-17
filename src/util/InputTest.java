@@ -9,6 +9,7 @@ public class InputTest {
 //
 //        System.out.println(input.yesNo());
 //        System.out.println(input.getInt(1, 10));
+        System.out.println(input.getInt());
 //        System.out.println(input.getDouble());
         System.out.println(input.getHex());
         System.out.println(input.getBinary());

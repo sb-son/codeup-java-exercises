@@ -33,21 +33,31 @@ public class Input {
         return userInput;
     }
 
+//    public int getInt() {
+//        System.out.println("Enter a number: ");
+//        while (true) {
+//            try {
+//                return Integer.valueOf(getString());
+//            } catch (NumberFormatException e) {
+//                System.out.println("Invalid. Try inputting a new integer: ");
+//            }
+//        }
+//    }
+
     public int getInt() {
         System.out.println("Enter a number: ");
-        while (true) {
-            try {
-                return Integer.valueOf(getString());
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid. Try inputting a new integer: ");
-            }
+        try {
+             return Integer.parseInt(getString());
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid. Try inputting a new integer: ");
+            return getInt();
         }
     }
     public int getInt(String prompt) {
         System.out.println(prompt);
         while (true) {
             try {
-                return Integer.valueOf(getString());
+                return Integer.parseInt(getString());
             } catch (NumberFormatException e) {
                 System.out.println("Invalid. Try again.");
             }
@@ -68,7 +78,7 @@ public class Input {
         System.out.println("Enter a number: ");
         while (true) {
             try {
-                return Double.valueOf(getString());
+                return Double.parseDouble(getString());
             } catch (NumberFormatException e) {
                 System.out.println("Invalid. Try inputting a new number: ");
             }
@@ -79,7 +89,7 @@ public class Input {
         System.out.println(prompt);
         while (true) {
             try {
-                return Double.valueOf(getString());
+                return Double.parseDouble(getString());
             } catch (NumberFormatException e) {
                 System.out.println("Invalid. Try again.");
             }
