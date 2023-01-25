@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class ArraysExercise {
+public class ArraysExercises {
     public static Person[] addPerson(Person[] array, Person newPerson) {
         Person[] people = Arrays.copyOf(array, array.length + 1);
         people[array.length] = newPerson;
